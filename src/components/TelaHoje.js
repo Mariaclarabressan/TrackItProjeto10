@@ -72,9 +72,14 @@ export default function TelaHoje() {
                 Authorization: `Bearer ${token}`
             }
         });
+        promise.then(() => {
+            mostraHabitoHoje();
+        })
         promise.catch(error =>  { 
             console.log(error)
             alert("Erro ao marcar tarefa") })
+        
+        
         
     }
 
@@ -98,10 +103,10 @@ export default function TelaHoje() {
                                 <Habito key={index}>
                                     <Titulo>
                                         <p>{habito.name}</p>
-                                        <Sequence valeu={habito.feito}>Sequencia atual: <span>{habito.currentSequence}</span></Sequence>
-                                        <Sequence valeu={habito.feito}>Sequencia atual: <span>{habito.highestSequence}</span></Sequence>
+                                        <Sequence value ={habito.done}>Sequencia atual: <span>{habito.currentSequence}</span></Sequence>
+                                        <Sequence value ={habito.done}>Sequencia atual: <span>{habito.highestSequence}</span></Sequence>
                                     </Titulo>
-                                    <Check onClick={() => { ckeck(habito.id, habito.feito) }} value={habito.feito}>
+                                    <Check onClick={() => { ckeck(habito.id, habito.done) }} value={habito.done}>
                                         <ion-icon name="checkbox-outline"></ion-icon>
                                     </Check>
                                 </Habito>
