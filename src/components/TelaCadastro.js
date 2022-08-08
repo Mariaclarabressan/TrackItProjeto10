@@ -46,7 +46,7 @@ export default function TelaCadastro() {
                 <img src={logo} alt="TrackIt" />
             </Logo>
 
-            <form onSubmit={novoUsuario}>
+            <form >
                 <div>
                     <input
                         placeholder='email'
@@ -85,7 +85,7 @@ export default function TelaCadastro() {
 
                 
                 
-                    <Button type='submit' >
+                    <Button onClick = {novoUsuario} >
                         {carregando ?
                             (<ThreeDots />)
                             :

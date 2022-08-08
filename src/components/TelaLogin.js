@@ -47,7 +47,7 @@ export default function TelaLogin() {
             <img src={logo} alt="TrackIt" />
          </Logo>
 
-         <form onSubmit={novoLogin}>
+         <form >
             <div>
                <input
                   placeholder='email'
@@ -68,7 +68,7 @@ export default function TelaLogin() {
                />
 
 
-               <Button type='submit' >
+               <Button onClick = {novoLogin} >
                   {carregando ?
                      (<ThreeDots />)
                      :
